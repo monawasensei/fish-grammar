@@ -1,0 +1,25 @@
+{
+    "name": "fish-grammar",
+    "displayName": "fish_grammar",
+    "description": "grammar rules for the made-up 'fish' programming language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.58.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "fish",
+            "aliases": ["fish", "fish"],
+            "extensions": [".fish"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "fish",
+            "scopeName": "source.fish",
+            "path": "./syntaxes/fish.tmLanguage.json"
+        }]
+    }
+}

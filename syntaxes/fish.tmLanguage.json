@@ -1,0 +1,77 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "fish",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"name": "entity.name.function",
+			"match": "(?<=(route|fish) )[A-z]*"
+		},
+		{
+			"name":"entity.name.class",
+			"match": "(?<=school )[A-Z][A-z]*"
+		},
+		{
+			"contentName": "entity.name.class",
+			"begin": "(?<=shoal )",
+			"end": "(?= <)"
+		},
+		{
+			"name": "entity.name.type",
+			"match": "hook"
+		},
+		{
+			"name": "keyword",
+			"match": "(route|fish|school|shoal|migrate)"
+		},
+		{
+			"name":"comment.block",
+			"begin": "/\\*",
+			"end": "\\*/"
+		},
+		{
+			"name":"comment.line",
+			"match":"#.*"
+		},
+		{
+			"name": "keyword.control",
+			"match":"(<\\(|\\)<)"
+		},
+		{
+			"name": "keyword.operator.new",
+			"match":"(>\\(|\\)>)"
+		},
+		{
+			"name": "keyword.other",
+			"match": ">::>"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.fish",
+				"match": "\\b(if|fin)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.fish",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.fish",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.fish",
+	"fileTypes": [".fish"],
+	"foldingStartMarker": "<(",
+	"foldingStopMarker": ")<"
+}
